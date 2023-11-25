@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto+Serif:opsz,wght@8..144,300&display=swap"
+        rel="stylesheet">
+    <style>
+        .dot {
+            --size: 1000px;
+            display: none;
+            position: absolute;
+            left: calc(var(--size) / 3 * -1);
+            top: calc(var(--size) / 3 * -1);
+            width: var(--size);
+            height: 5000px;
+            mix-blend-mode: soft-light;
+            filter: blur(calc(var(--size) / 6));
+            animation: dot-animation ease-in-out 20s infinite;
+            will-change: transform;
+        }
+
+        @supports (mix-blend-mode: soft-light) and (filter: blur(1px)) {
+            .animatedwrapper {
+                background: none;
+            }
+
+            .dot {
+                display: block;
+            }
+        }
+
+        .dot--one {
+            background: #bd3690;
+        }
+
+        .dot--two {
+            background: #f48937;
+            animation-delay: -7s;
+        }
+
+        .dot--three {
+            background: #ed2a24;
+            animation-delay: -1s;
+        }
+
+        @keyframes dot-animation {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            33% {
+                transform: translate(calc(var(--size) / 1.5), 0);
+            }
+
+            66% {
+                transform: translate(0, calc(var(--size) / 1.5));
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+
+
+        .navbar {
+            margin-top: 20px;
+            border-radius: 50px;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .home-img {
+            width: 30px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 10px;
+        }
+
+        .animatedwrapper {
+            position: absolute;
+            top: -100px;
+            z-index: -1;
+            height: 5000px;
+            isolation: isolate;
+        }
+
+        .grid-container {
+            display: grid;
+
+            grid-template-rows: 300px 500px;
+            grid-template-columns: 1fr 1.5fr 275px;
+            gap: 20px;
+        }
+
+
+
+        .grid-container>div {
+            border-radius: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            background-color: white;
+        }
+
+        .hero-one {
+            grid-area: 1/1/2/3;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Libre Baskerville', serif;
+            font-family: 'Roboto Serif', serif;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-size: 20px;
+            line-height: 56px;
+        }
+
+
+
+
+
+        .hero-two {
+            grid-area: 1/3/2/4;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.13), 0 6px 20px 0 rgba(0, 0, 0, 0.13);
+        }
+
+        .hero-three {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            grid-area: 2/1/3/2;
+            padding-top: 5%;
+        }
+
+
+
+        .hero-four {
+            grid-area: 2/2/3/4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .emoji {
+            position: relative;
+            height: 375px;
+            bottom: 20px;
+            right: 50px;
+        }
+
+        .for-flex {
+            display: flex;
+            height: 900px;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+
+
+
+        .main-word {
+            font-size: 4rem;
+        }
+
+        .curious {
+            margin-top: 30px;
+        }
+
+        .header-education {
+            display: flex;
+            flex-direction: column;
+
+            justify-content: space-evenly;
+            align-items: center;
+
+            margin-top: 40px;
+            text-align: center;
+        }
+
+
+        .experience-points {
+            margin-top: 2%;
+            display: flex;
+            flex-direction: column;
+            width: 82%;
+            text-align: justify;
+            height: 180px;
+        }
+
+
+        .main-words {
+            font-size: 1rem;
+            font-weight: bolder;
+        }
+
+        .d-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .d-flex h4 {
+            width: 170px;
+        }
+
+        .hero-four>span:hover,
+        .hero-three>span:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.13), 0 6px 20px 0 rgba(0, 0, 0, 0.13);
+        }
+
+
+
+
+
+        @media(max-width:1200px) {
+
+            .navbar {
+                margin-top: 0px;
+                position: fixed;
+                border-radius: 50px;
+                background-color: white;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+
+            .grid-container {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .hero-one {
+                display: flex;
+                padding: 20px
+            }
+
+            .main-word {
+                font-size: 45px;
+            }
+
+            .hero-two {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .emoji {
+                position: relative;
+                top: 3%;
+                left: 0.2%;
+            }
+
+            .hero-three {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 20px;
+            }
+
+            .d-flex h4 {
+
+                width: 140px;
+            }
+
+            .animatedwrapper {
+                top: -500px;
+            }
+
+            .dot {
+                --size: 100px;
+            }
+
+            .dot {
+                --size: 600px;
+            }
+
+            .section-2 {
+                margin-top: 950px;
+            }
+        }
+        body{
+                height: 1000px !important;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="flex-nav">
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container-fluid">
+                    <a class="home-img" href="http://127.0.0.1:3000/capston2/index.html"><img src="./Image.png"
+                            height="30px"></a>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Hello there!</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Resume</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div>
+            <div class="for-flex">
+                <div class="grid-container">
+                    <div class="hero-one">
+                        <div class="heading">
+                            <p><span class="main-word">Why hello there!</span></p>
+                           
+                        </div>
+                    </div>
+                    <div class="hero-two">
+                        <img class="emoji" src="./Image 2.png">
+                    </div>
+                    <div class="hero-three">
+                        <span
+                            class="badge d-flex align-items-center mt-3 bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">
+                            <img class="rounded-circle me-2" width="44" height="44" src="./Image 3.png" alt="">
+                            <a class="nav-link active" href="#education">
+                                <h2 class="mt-2 ">Contact Info:-</h2>
+                            </a>
+                        </span>
+
+                        <div class="header-education">
+                            <div>
+                                <span class="badge bg-info-subtle border border-info-subtle text-info-emphasis ">
+
+
+                                    <h4 class="mt-3">Name:Chaitanya Krishna Nallanukala</h4>
+                                    <h4 class="mt-3">Gmail:cnallanukala@ualr.edu</h4>
+                                    <h4 class="mt-3">LinkedIn:Chaitanya Krishna</h4>
+                                    <h4 class="mt-3">Phone:(765)240-3759</h4>
+
+
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-four">
+                        <span
+                            class="badge d-flex align-items-center mt-3 bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">
+                            <img class="rounded-circle me-2" width="44" height="44" src="./Image 4.png" alt="">
+
+                            <a class="nav-link active" href="#experence">
+                                <h2 class="mt-2 ">Projects:-</h2>
+                            </a>
+                        </span>
+
+
+                        <div class="experience-points">
+                            <h4>Hospital Management System</h4>
+                            <p class="matter"> Streamlined patient records, appointment scheduling, and billing
+                                processes using <span class="main-words">Java</span> and <span
+                                    class="main-words">Angular</span>, with <span class="main-words">PostgreSQL</span>
+                                for efficient data handling.
+                            </p>
+                            <h4>Helpdesk and Ticketing Platform (Capgemini)</h4>
+                            <p class="matter"> Developed a <span class="main-words">PHP</span> and <span
+                                    class="main-words">JavaScript-based</span> platform, integrating <span
+                                    class="main-words">Python-driven</span>
+                                analytics for efficient issue resolution and user feedback analysis.
+                            </p>
+                            <h4>Personal Finance Tracker</h4>
+                            <p class="matter"> Built a <span class="main-words">ReactJS</span> and <span
+                                    class="main-words">Node.js</span> application for managing personal finances,
+                                featuring expense tracking and visual analytics.
+                            </p>
+                            <h4>Inventory Management System</h4>
+                            <p class="matter"> Developed a <span class="main-words">Python</span>  and <span class="main-words">MySQL-based</span>  system for tracking stock levels,
+                                orders, and sales in retail.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <div class="animatedwrapper">
+        <div class="dot dot--one"></div>
+        <div class="dot dot--two"></div>
+        <div class="dot dot--three"></div>
+    </div>
+
+    <div class="container my-5" id="education">
+
+        <h3 class="bg-success-subtle border border-success-subtle text-success-emphasis  mb-3 ps-5 rounded-pill ">
+            Skills</h3>
+
+    </div>
+    <div class="container my-5" id="education">
+        <div class="px-4 py-5 my-5  shadow-sm  card">
+            <h4 class="bg-success-subtle border border-success-subtle text-success-emphasis  mb-3 ps-5 rounded-pill ">
+                Programming Languages:</h4>
+            <div class="col-lg- mx-auto container-xl" class="btn btn-outline-secondary btn-lg mt-4 px-4 mb-4">
+
+                <p class="ms-5">• My proficiency spans across multiple programming languages such as C++, Java (versions
+                    8 and 11), JavaScript, Python, and PHP. This diverse skill set enables me to tackle a wide range of
+                    software engineering challenges, from intricate backend processes to engaging frontend development.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5" id="education">
+        <div class="px-4 py-5 my-5  shadow-sm  card">
+            <h4 class="bg-success-subtle border border-success-subtle text-success-emphasis  mb-3 ps-5 rounded-pill ">
+                Frameworks and Technologies:</h4>
+            <div class="col-lg- mx-auto container-xl" class="btn btn-outline-secondary btn-lg mt-4 px-4 mb-4">
+
+                <p class="ms-5">• I am well-versed in using advanced frameworks and technologies including Angular 12,
+                    Spring Boot, Hibernate, and particularly Kafka, which I have utilized for building high-throughput,
+                    distributed messaging systems. My experience also extends to web development with ReactJS, HTML5,
+                    and CSS, enabling me to create dynamic and responsive web interfaces.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5" id="education">
+        <div class="px-4 py-5 my-5  shadow-sm  card">
+            <h4 class="bg-success-subtle border border-success-subtle text-success-emphasis  mb-3 ps-5 rounded-pill">
+                Databases and Data Handling:</h4>
+            <div class="col-lg- mx-auto container-xl" class="btn btn-outline-secondary btn-lg mt-4 px-4 mb-4">
+
+                <p class="ms-5">• Skilled in database management and data handling techniques, I have worked with
+                    GraphQL, JDBC, and PostgreSQL, ensuring efficient data management and optimization in
+                    application development.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5" id="education">
+        <div class="px-4 py-5 my-5  shadow-sm  card">
+            <h4 class="bg-success-subtle border border-success-subtle text-success-emphasis  mb-3 ps-5 rounded-pill">
+                Cloud Technologies:</h4>
+            <div class="col-lg- mx-auto container-xl" class="btn btn-outline-secondary btn-lg mt-4 px-4 mb-4">
+
+                <p class="ms-5">• I possess strong capabilities in cloud computing, with hands-on experience in AWS
+                    services like EC2, S3, and Lambda. Additionally, I am proficient in Microsoft Azure, which I
+                    have used for cloud storage solutions, building and deploying scalable applications, and
+                    integrating various Azure services to enhance application functionality and performance.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5" id="education">
+        <div class="px-4 py-5 my-5  shadow-sm  card">
+            <h4 class="bg-success-subtle border border-success-subtle text-success-emphasis  mb-3 ps-5 rounded-pill">
+                Version Control and Tools:</h4>
+            <div class="col-lg- mx-auto container-xl" class="btn btn-outline-secondary btn-lg mt-4 px-4 mb-4">
+
+                <p class="ms-5">• Proficient in using Git for version control, I efficiently manage codebases across
+                    different projects. My toolset includes IntelliJ IDEA, Visual Studio, and Maven, which
+                    streamline my development processes, boost productivity, and foster effective collaboration.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5" id="education">
+        <div class="px-4 py-5 my-5  shadow-sm  card">
+            <h4 class="bg-success-subtle border border-success-subtle text-success-emphasis  mb-3 ps-5 rounded-pill">
+                Agile Methodologies:</h4>
+            <div class="col-lg- mx-auto container-xl" class="btn btn-outline-secondary btn-lg mt-4 px-4 mb-4">
+
+                <p class="ms-5">• I am adept in Agile methodologies, which guides my approach to software development.
+                    This expertise allows me to work effectively in fast-paced and continuously evolving project
+                    environments, emphasizing flexibility, adaptability, and teamwork.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <footer class="py-5">
+          <div class="row">
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Section</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+              </ul>
+            </div>
+      
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Section</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+              </ul>
+            </div>
+      
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Section</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+              </ul>
+            </div>
+      
+            <div class="col-md-5 offset-md-1 mb-3">
+              <form>
+                <h5>Subscribe to our newsletter</h5>
+                <p>Monthly digest of what's new and exciting from us.</p>
+                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                  <label for="newsletter1" class="visually-hidden">Email address</label>
+                  <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                  <button class="btn btn-primary" type="button">Subscribe</button>
+                </div>
+              </form>
+            </div>
+          </div>
+      
+          <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+            <p>© 2023 Company, Inc. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+              <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+              <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+              <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
